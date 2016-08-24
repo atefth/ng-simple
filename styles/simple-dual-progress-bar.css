@@ -1,0 +1,38 @@
+.indicator {
+  position: relative;
+  margin-top: 45px;
+}
+.indicator-status {
+  position: absolute;
+  left: 0px;
+  top: -42px;
+  -webkit-transition: 1s all;
+  transition: 1s all;
+  width: 100%;
+}
+.status-pills {
+  display: inline-block;
+  padding: 0px 10px;
+  width: 180px;
+  color: #fff;
+}
+.pointer {
+  position: absolute;
+  left: 0px;
+  top: -42px;
+  -webkit-transition: 1s all;
+  transition: 1s all;
+  background-color: #e6e6e6;
+  height: 40px;
+  width: 200px;
+  border-radius: 8px 8px 0px 0px;
+  opacity: 0.9;
+}
+.progress {
+  height: 40px;
+  margin-bottom: 0px;
+  border-radius: 0px 0px 8px 8px;
+}
+.progress-bar {
+  padding: 10px 0px;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Demo</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="styles/simple-draggable-toggle-button.css">
+		<link rel="stylesheet" href="styles/simple-dual-progress-bar.css">
+	</head>
+	<body ng-app="demo">
+		<div class="jumbotron">
+			<div class="container" ng-controller="DemoCtrl">
+				<h1>Demo</h1>
+				<div align="center">
+					<ng-simple-multiselect-dropdown ng-model="filtered_status" options="[{label: 'first', value: 1, multiselectable: false}, {label: 'second', value: 2}, {label: 'third', value: 3}]", ng-change="updateStatuses()">
+					</ng-simple-multiselect-dropdown>
+				</div>
+				<hr>
+				<div align="center">
+					<ng-simple-draggable-toggle-button ng-model="toggleModel" ng-change="doSomething()" on-color="'#2196F3'" off-color="'#CCC'">
+					</ng-simple-draggable-toggle-button>
+				</div>
+				<hr>
+				<div align="center">
+					<ng-simple-dual-progress-bar min="min" max="max" score="score" status="status" score-text="'points'" statuses="statuses" extra-statuses="extraStatuses">
+					</ng-simple-dual-progress-bar>
+				</div>
+			</div>
+		</div>
+
+		<!-- jQuery -->
+		<script src="vendor/jquery/dist/jquery.min.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+		<!-- Angular JavaScript -->
+		<script src="vendor/angular/angular.js"></script>
+		<!-- Directive JavaScript -->
+ 		<script src="scripts/simple-directives.js"></script>
+ 		<script src="scripts/simple-multiselect-dropdown.js"></script>
+ 		<script src="scripts/simple-draggable-toggle-button.js"></script>
+ 		<script src="scripts/simple-dual-progress-bar.js"></script>
+ 		<script src="index.js"></script>
+	</body>
+</html>

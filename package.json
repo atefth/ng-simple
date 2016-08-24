@@ -1,0 +1,23 @@
+{
+  "name": "simple-multiselect-dropdown",
+  "version": "1.0.0",
+  "description": "Simple Multiselect Dropdown for Angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angular",
+    "dropdown"
+  ],
+  "author": "atefth@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-livereload": "*",
+    "tiny-lr": "*",
+    "connect": "*",
+    "serve-static": "*",
+    "connect-livereload": "*"
+  }
+}

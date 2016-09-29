@@ -13,16 +13,19 @@ angular
       extraStatuses: '=extraStatuses',
       symbol: '=symbol',
       scoreText: '=scoreText',
+      template: '=',
 		},
-		templateUrl: '../templates/simple-dual-progress-bar.html',
+    templateUrl: function(element, attrs) {
+      return attrs.template || 'simple-dual-progress-bar.html';
+    },
 		link: function (scope, element, attrs) {
       var selectedStatus = undefined;
       var orders = scope.statuses.length;
       var width = undefined;
       var pointerWidth = undefined;
-      var pointer = angular.element(element[0].querySelector('.pointer'));
-      var progress = angular.element(element[0].querySelector('.progress'));
-      var progressBar = angular.element(element[0].querySelector('.progress .progress-bar'));
+      var pointer = angular.element(element[0].querySelector('.ng-simple-pointer'));
+      var progress = angular.element(element[0].querySelector('.ng-simple-progress'));
+      var progressBar = angular.element(element[0].querySelector('.ng-simple-progress .progress .progress-bar'));
 
       function setWidth() {
         if (scope.score == 0) {

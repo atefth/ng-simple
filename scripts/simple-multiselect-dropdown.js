@@ -8,18 +8,22 @@ angular
 			// models
       options: '=',
       output: '=ngModel',
+      dropdownText: '=dropdownText',
       // settings based on attribute
+      template: '=',
       disabled: '=',
       // callbacks
-      onItemClick: '&',
-      onOpen: '&',
-      ngChange: '&',
+      // onItemClick: '&',
+      // onOpen: '&',
+      // ngChange: '&',
 		},
-		templateUrl: '../templates/simple-multiselect-dropdown.html',
+    templateUrl: function(element, attrs) {
+      return attrs.template || 'simple-multiselect-dropdown.html';
+    },
 		link: function (scope, element, attrs) {
 			var disabledStyle = '{}';
-			var text = 'Select';
-			scope.dropdownText = text;
+			var text = 'Select Options';
+			scope.dropdownText = scope.dropdownText || text;
 			if (scope.disabled) {
 				disabledStyle = "{opacity: 0.5}";
 			}

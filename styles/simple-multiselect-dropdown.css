@@ -1,0 +1,20 @@
+.ng-simple-dropdown {
+	display: inline-block;
+}
+
+.ng-simple-dropdown-menu.list {
+	padding: 0px;
+	display: block;
+}
+
+.ng-simple-list-group.items {
+	margin: 0px;
+}
+
+.ng-simple-list-label {
+	padding-left: 5px;
+}
+
+.ng-simple-list-group-item {
+	min-width: 215px;
+}

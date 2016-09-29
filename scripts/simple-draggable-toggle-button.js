@@ -109,7 +109,9 @@ angular
       	}
       	toggle(checkbox.checked);
         scope.$parent[attrs.ngModel] = checkbox.checked;
-        scope.ngChange();
+        if (scope.ngChange != undefined) {
+          scope.ngChange();
+        }
         $document.unbind('mousemove', mousemove);
         $document.unbind('mouseup', mouseup);
       }

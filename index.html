@@ -107,8 +107,12 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-lg-8" align="left">
-								<ng-simple-multiselect-dropdown ng-model="filtered_status" options="options" ng-change="updateStatuses()" dropdown-text="'Dropdown with multiple options'" disabled="true"></ng-simple-multiselect-dropdown>
+							<div class="col-lg-4" align="left">
+								<ng-simple-multiselect-dropdown ng-model="filtered_status" options="options" ng-change="updateStatuses()" dropdown-text="'Dropdown with multiple options'" disabled="isDisabled"></ng-simple-multiselect-dropdown>
+							</div>
+							<label class="col-lg-2" style="margin-top: 8px;">Disabled</label>
+							<div class="col-lg-2">
+								<ng-simple-draggable-toggle-button ng-model="isDisabled" on-color="onColor" off-color="offColor"></ng-simple-draggable-toggle-button>
 							</div>
 							<div class="col-lg-4">
 								<button type="button" class="btn btn-success" ng-click="options.push({})">Add Option</button>

@@ -15,7 +15,7 @@ angular
       // callbacks
       // onItemClick: '&',
       // onOpen: '&',
-      // ngChange: '&',
+      ngChange: '&',
 		},
     templateUrl: function(element, attrs) {
       return attrs.template || 'simple-multiselect-dropdown.html';

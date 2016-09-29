@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Demo</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+		<!-- Demo CSS -->
+		<link rel="stylesheet" href="styles/index.css">
+		<!-- Directive CSS -->
+		<link rel="stylesheet" href="styles/simple-draggable-toggle-button.css">
+		<link rel="stylesheet" href="styles/simple-dual-progress-bar.css">
+		<link rel="stylesheet" href="styles/simple-multiselect-dropdown.css">
+		<!-- UI Bootstrap CSS -->
+		<link rel="stylesheet" href="vendor/angular-bootstrap/ui-bootstrap-csp.css">
+
+	</head>
+	<body ng-app="demo">
+		<div class="jumbotron">
+			<div class="container" ng-controller="DemoCtrl">
+				<h1>Components</h1>
+				<hr class="hr">
+				<h2>Multiselect Dropdown</h2>
+				<hr class="hr">
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="demo-text">
+							<div class="list-group" ng-init="multiselectAnchor = 'options'">
+								<a class="list-group-item" ng-class="{'active': multiselectAnchor == 'options'}" ng-click="multiselectAnchor = 'options'">
+									<h4 class="list-group-item-heading">options</h4>
+									<p class="list-group-item-text">Array of Options</p>
+								</a>
+								<a class="list-group-item" ng-class="{'active': multiselectAnchor == 'ng-model'}" ng-click="multiselectAnchor = 'ng-model'">
+									<h4 class="list-group-item-heading">ng-model</h4>
+									<p class="list-group-item-text">Selected Model</p>
+								</a>
+								<a class="list-group-item" ng-class="{'active': multiselectAnchor == 'ng-change'}" ng-click="multiselectAnchor = 'ng-change'">
+									<h4 class="list-group-item-heading">ng-change</h4>
+									<p class="list-group-item-text">On Change Callback</p>
+								</a>
+								<a class="list-group-item" ng-class="{'active': multiselectAnchor == 'template'}" ng-click="multiselectAnchor = 'template'">
+									<h4 class="list-group-item-heading">template</h4>
+									<p class="list-group-item-text">Custom Dropdown Template</p>
+								</a>
+								<a class="list-group-item" ng-class="{'active': multiselectAnchor == 'disabled'}" ng-click="multiselectAnchor = 'disabled'">
+									<h4 class="list-group-item-heading">disabled</h4>
+									<p class="list-group-item-text">Disable Options</p>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-8 demo" align="center">
+						<div class="row">
+							<div class="col-lg-12">
+								<uib-tabset active="active">
+									<uib-tab index="0" heading="Markup">
+										<div class="well-sm">
+											<pre>&lt;ng-simple-multiselect-dropdown ng-model=&quot;filtered_status&quot; options=&quot;options&quot; ng-change=&quot;updateStatuses()&quot; dropdown-text=&quot;'Dropdown with multiple options'&quot;&gt;&lt;/ng-simple-multiselect-dropdown&gt;</pre>
+										</div>
+									</uib-tab>
+									<uib-tab index="1" heading="JS">
+										<div class="well-sm">
+											<pre>$scope.options = 
+[ 
+	{label: 'Not Multiselectable', value: 1, multiselectable: false}, 
+	{label: 'Multiselectable Option 1', value: 2}, 
+	{label: 'Multiselectable Option 2', value: 3}, 
+	{label: 'Multiselectable Option 3', value: 4} 
+];</pre>
+											<pre>$scope.filtered_status = [];</pre>
+											<pre>$scope.updateStatuses = function () { console.log('ctrl', $scope.filtered_status); }</pre>
+										</div>
+									</uib-tab>
+								</uib-tabset>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<h4>Options Array</h4>
+								<div class="row" ng-repeat="(key, value) in options">
+									<div class="col-lg-4">
+										<div class="form-group">
+											<input type="text" class="form-control" ng-model="value.label">
+										</div>
+									</div>
+									<div class="col-lg-4">
+										<div class="form-group">
+											<input type="text" class="form-control" ng-model="value.value">
+										</div>
+									</div>
+									<div class="col-lg-4">
+										<div class="form-group">
+											<label style="margin-top: 10px;">
+												<input type="radio" ng-model="value.multiselectable" ng-value="true">
+												True
+											</label>
+											<label style="margin-top: 10px;">
+												<input type="radio" ng-model="value.multiselectable" ng-value="false">
+												False
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-8" align="left">
+								<ng-simple-multiselect-dropdown ng-model="filtered_status" options="options" ng-change="updateStatuses()" dropdown-text="'Dropdown with multiple options'" disabled="true"></ng-simple-multiselect-dropdown>
+							</div>
+							<div class="col-lg-4">
+								<button type="button" class="btn btn-success" ng-click="options.push({})">Add Option</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr class="hr">
+				<h2>Draggable Dropdown</h2>
+				<hr class="hr">
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="demo-text">
+							<div class="list-group" ng-init="draggableAnchor = 'ng-model'">
+								<a class="list-group-item" ng-class="{'active': draggableAnchor == 'ng-model'}" ng-click="draggableAnchor = 'ng-model'">
+									<h4 class="list-group-item-heading">ng-model</h4>
+									<p class="list-group-item-text">Selected Model</p>
+								</a>
+								<a class="list-group-item" ng-class="{'active': draggableAnchor == 'ng-change'}" ng-click="draggableAnchor = 'ng-change'">
+									<h4 class="list-group-item-heading">ng-change</h4>
+									<p class="list-group-item-text">On Change Callback</p>
+								</a>
+								<a class="list-group-item" ng-class="{'active': draggableAnchor == 'onColor'}" ng-click="draggableAnchor = 'onColor'">
+									<h4 class="list-group-item-heading">onColor</h4>
+									<p class="list-group-item-text">Toggle Button Color When On</p>
+								</a>
+								<a class="list-group-item" ng-class="{'active': draggableAnchor == 'offColor'}" ng-click="draggableAnchor = 'offColor'">
+									<h4 class="list-group-item-heading">offColor</h4>
+									<p class="list-group-item-text">Toggle Button Color When Off</p>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-8 demo" align="center">
+						<div class="row">
+							<div class="col-lg-12">
+								<uib-tabset active="active">
+									<uib-tab index="0" heading="Markup">
+										<div class="well-sm">
+											<pre>&lt;ng-simple-draggable-toggle-button ng-model=&quot;toggleModel&quot; ng-change=&quot;doSomething()&quot; on-color=&quot;onColor&quot; off-color=&quot;offColor&quot;&gt;&lt;/ng-simple-draggable-toggle-button&gt;</pre>
+										</div>
+									</uib-tab>
+									<uib-tab index="1" heading="JS">
+										<div class="well-sm">
+											<pre>$scope.toggleModel = false;</pre>
+											<pre>$scope.onColor = '#2196F3';</pre>
+											<pre>$scope.offColor = '#848484';</pre>
+											<pre>$scope.doSomething = function () { console.log('ctrl', $scope.toggleModel); }</pre>
+										</div>
+									</uib-tab>
+								</uib-tabset>							
+							</div>
+						</div>
+						<div class="row" style="margin-top: 20px;">
+							<div class="col-lg-2">
+								<input type="color" class="form-control" ng-model="onColor">
+							</div>
+							<div class="col-lg-2">
+								<input type="color" class="form-control" ng-model="offColor">
+							</div>
+							<div class="col-lg-8">
+								<ng-simple-draggable-toggle-button ng-model="toggleModel" ng-change="doSomething()" on-color="onColor" off-color="offColor"></ng-simple-draggable-toggle-button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr class="hr">
+				<h2>Dual Progress Bar</h2>
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="demo-text">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</div>
+					</div>
+					<div class="col-lg-8 demo" align="center">
+						<div class="row">
+							<div class="col-lg-{{ 12 / statuses.length }}" ng-repeat="(key, value) in statuses">
+								<div class="row">
+									<div class="col-lg-6">
+										<button type="button" class="btn btn-default" ng-click="setStatus(value)">{{ value.label }}</button>
+									</div>
+									<div class="col-lg-6">
+										<input type="color" class="form-control" ng-model="value.color" ng-change="setStatus(value)">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row" style="margin-top: 20px;">
+							<label class="col-lg-3" style="margin-top: 5px;">Score</label>
+							<div class="col-lg-3">
+								<input type="number" class="form-control" ng-model="score" min="{{ min }}" max="{{ max }}" step="1" required="required">
+							</div>
+							<div class="col-lg-{{ 6 / extraStatuses.length }}" ng-repeat="(key, value) in extraStatuses">
+								<div class="row">
+									<div class="col-lg-6">
+										<button type="button" class="btn btn-default" ng-click="setExtraStatus(value)">{{ value.label }}</button>
+									</div>
+									<div class="col-lg-6">
+										<input type="color" class="form-control" ng-model="value.color" ng-change="setExtraStatus(value)">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row" style="margin-top: 20px;">
+							<div class="col-lg-12">
+								<ng-simple-dual-progress-bar min="min" max="max" score="score" status="status" score-text="'points'" statuses="statuses" extra-statuses="extraStatuses"></ng-simple-dual-progress-bar>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- jQuery JavaScript -->
+		<script src="vendor/jquery/dist/jquery.min.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+		<!-- Angular JavaScript -->
+		<script src="vendor/angular/angular.js"></script>
+		<script src="vendor/angular-route/angular-route.min.js"></script>
+		<!-- UI Bootstrap JavaScript -->
+		<script src="vendor/angular-bootstrap/ui-bootstrap.min.js"></script>
+		<script src="vendor/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+		<!-- ngSanitize JavaScript -->
+		<script src="vendor/angular-sanitize/angular-sanitize.min.js"></script>
+		<!-- Directive JavaScript -->
+		<script src="scripts/simple-directives.js"></script>
+		<script src="scripts/templates.js"></script>
+		<script src="scripts/simple-multiselect-dropdown.js"></script>
+		<script src="scripts/simple-draggable-toggle-button.js"></script>
+		<script src="scripts/simple-dual-progress-bar.js"></script>
+		<!-- Demo JavaScript -->
+		<script src="index.js"></script>
+	</body>
+</html>

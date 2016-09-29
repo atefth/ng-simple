@@ -1,0 +1,31 @@
+{
+  "name": "simple-multiselect-dropdown",
+  "authors": [
+    "Atef Haque <atefth@gmail.com>"
+  ],
+  "description": "Simple Angular Directives",
+  "main": "index.html",
+  "keywords": [
+    "angular",
+    "dropdown",
+    "multiselect",
+    "progress-bar",
+    "draggable-toggle"
+  ],
+  "license": "MIT",
+  "homepage": "github.com/atefth",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "angular-bootstrap": "^2.1.4",
+    "angular-sanitize": "^1.5.8"
+  }
+}

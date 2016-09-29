@@ -1,10 +1,10 @@
-<div class="dropdown">
+<div class="ng-simple-dropdown dropdown">
 	<button class="btn btn-primary" type="button" id="dropdownMenu" ng-click="dropdownStatus = !dropdownStatus">{{ dropdownText }}</button>
-	<div class="dropdown-menu" style="padding: 0px; display: block;" ng-show="dropdownStatus">
-		<ul class="list-group" style="margin: 0px;" ng-style="disabledStyle">
-			<li class="list-group-item" ng-repeat="option in options" ng-click="updateList(option)">
+	<div class="ng-simple-dropdown-menu dropdown-menu list" ng-show="dropdownStatus">
+		<ul class="ng-simple-list-group list-group items" ng-style="disabledStyle">
+			<li class="ng-simple-list-group-item list-group-item" ng-repeat="option in options" ng-click="updateList(option)">
 				<input type="checkbox" value="{{ option.value }}" ng-checked="option.checked" ng-disabled="disabled">
-				<label style="padding-left: 5px;">{{ option.label }}</label>
+				<label class="list-label">{{ option.label }}</label>
 			</li>
 		</ul>
 	</div>

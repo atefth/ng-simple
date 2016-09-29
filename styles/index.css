@@ -1,0 +1,31 @@
+.hr {
+	border-top: 1px solid #fff;
+}
+
+.demo {
+	background-color: khaki;
+	border-radius: 8px;
+	padding: 20px;
+}
+
+.demo-text {
+	color: #000;
+	background-color: #fff;
+	border-radius: 8px;
+	padding: 20px;
+}
+
+.tab-content > .tab-pane {
+	background-color: white;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+pre {
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}

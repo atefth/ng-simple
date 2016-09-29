@@ -1,12 +1,11 @@
-<div class="indicator">
-	<span class="pointer" aria-hidden="true"></span>
-	<span class="indicator-status" aria-hidden="true">
-		<span ng-repeat="(key, value) in statuses" class="status-pills" style="width: {{ (1/statuses.length)*100  }}%; color: #fff;"><h4 style="z-index: 9999">{{ value.label }}</h4></span>
+<div class="ng-simple-indicator">
+	<span class="ng-simple-pointer" aria-hidden="true"></span>
+	<span class="ng-simple-indicator-status" aria-hidden="true">
+		<span ng-repeat="(key, value) in statuses" class="ng-simple-status-pills" style="width: {{ (1/statuses.length)*100  }}%; color: #fff;"><h4 style="z-index: 9999">{{ value.label }}</h4></span>
 	</span>
 </div>
-<div class="progress">
-  <div class="progress-bar" ng-class="{'progress-bar-success': class == 'success', 'progress-bar-warning': class == 'warning', 'progress-bar-danger': class == 'danger'}" role="progressbar"
-  aria-valuenow="{{ score }}" aria-valuemin="{{ min }}" aria-valuemax="{{ max }}" style="width: {{ width }}%">
-    {{ score }} {{ symbol }} {{ scoreText }}
+<div class="progress ng-simple-progress" align="center">
+  <div class="progress-bar ng-simple-progress" ng-class="{'progress-bar-success': class == 'success', 'progress-bar-warning': class == 'warning', 'progress-bar-danger': class == 'danger'}" role="progressbar" aria-valuenow="{{ score }}" aria-valuemin="{{ min }}" aria-valuemax="{{ max }}" style="width: {{ width }}%">
   </div>
+  <p class="ng-simple-progress-text">{{ score }} {{ symbol }} {{ scoreText }}</p>
 </div>

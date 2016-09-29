@@ -1,23 +1,28 @@
 {
-  "name": "simple-multiselect-dropdown",
+  "name": "ng-simple",
   "version": "1.0.0",
-  "description": "Simple Multiselect Dropdown for Angular",
+  "description": "Simple Directives for Angular",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "angular",
-    "dropdown"
+    "dropdown",
+    "multiselect",
+    "progress-bar",
+    "draggable-toggle"
   ],
   "author": "atefth@gmail.com",
   "license": "MIT",
   "devDependencies": {
-    "gulp": "*",
-    "gulp-livereload": "*",
-    "tiny-lr": "*",
     "connect": "*",
+    "connect-livereload": "*",
+    "gulp": "*",
+    "gulp-angular-templatecache": "^2.0.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-livereload": "*",
     "serve-static": "*",
-    "connect-livereload": "*"
+    "tiny-lr": "*"
   }
 }

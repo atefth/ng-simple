@@ -1,8 +1,8 @@
-.indicator {
+.ng-simple-indicator {
   position: relative;
   margin-top: 45px;
 }
-.indicator-status {
+.ng-simple-indicator-status {
   position: absolute;
   left: 0px;
   top: -42px;
@@ -10,13 +10,13 @@
   transition: 1s all;
   width: 100%;
 }
-.status-pills {
+.ng-simple-status-pills {
   display: inline-block;
   padding: 0px 10px;
   width: 180px;
   color: #fff;
 }
-.pointer {
+.ng-simple-pointer {
   position: absolute;
   left: 0px;
   top: -42px;
@@ -28,11 +28,19 @@
   border-radius: 8px 8px 0px 0px;
   opacity: 0.9;
 }
-.progress {
+.ng-simple-progress {
   height: 40px;
   margin-bottom: 0px;
   border-radius: 0px 0px 8px 8px;
 }
-.progress-bar {
+.ng-simple-progress-bar {
   padding: 10px 0px;
+}
+.ng-simple-progress-text {
+  display: block;
+  position: absolute;
+  margin-bottom: 0px !important;
+  padding: 5px 0px;
+  left: 47.5%;
+  color: #fff;
 }

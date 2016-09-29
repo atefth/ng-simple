@@ -1,5 +1,5 @@
 angular
-.module('ngSimple');
+.module('ngSimple', []);
 // .config(['$routeProvider', function ($routeProvider) {
 // 	$routeProvider
 // 	.when('/ng-multiselect-dropdown', {

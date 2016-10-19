@@ -9,5 +9,5 @@ before_script:
   - 'npm install -g bower'
   - 'bower install'
   - 'npm install'
-script:
-  - 'gulp'
+# script:
+#   - 'npm test'
